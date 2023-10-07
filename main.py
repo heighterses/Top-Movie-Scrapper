@@ -14,12 +14,13 @@ for list_of_names in Movie_Names:
     names_text = list_of_names.getText()
     list_of_Movies.append(names_text)
 
-top_movie = min(list_of_Movies)
-low_movie = max(list_of_Movies)
-print(top_movie,low_movie)
+rev_list_of_movies = list_of_Movies[::-1]
 
 file = "movies.txt"
 
-with open("movies.txt", "w") as file:
-    for movie in list_of_Movies:
-        file.write(movie)
+with open(file, "w", encoding="utf-8") as file:
+    for prn in rev_list_of_movies:
+        print(prn)
+        file.write(prn + "\n")
+
+
